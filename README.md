@@ -21,7 +21,7 @@ Space Invaders game with the characters from Ricky and Morty - Python
     <img src="/dizziolica.jpg" alt="Logo" width="80" height="80">
     
   </a>
-  ![]( https://github.com/Dizziolica/Ricky-MortyInvaders/blob/main/morty.gif )
+  
   
 
   <h3 align="center">Utility Project</h3>
@@ -124,4 +124,4 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<img src="https://github.com/Dizziolica/Ricky-MortyInvaders/blob/main/morty.gif" width="40" height="40" />
