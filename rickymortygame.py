@@ -59,18 +59,22 @@ heroIImage = heroSize.get_rect(midleft = (500, screenH - 250))
 
 #Music
 pygame.mixer.init()
-sound = pygame.mixer.Sound("morty2.mp3")
+sound = pygame.mixer.Sound("morty3.mp3")
 sound.play(loops=-1, maxtime=0, fade_ms=0)
 sound.set_volume(0.5)
 
-#Score
 pygame.font.init()
+
+#Score
+start_time = 0
+
+
 
 
         
 
 invaders, shots = [], []
-for x in range(100, 1250, 100):
+for x in range(100, 1250, 200):
     for y in range(50, 300, 100
     ):
         invaders.append(enemySize.get_rect(topleft=(x, y)))
@@ -88,6 +92,12 @@ for x in range(100):
 
 while True:
     clock.tick(40)
+    current_time = int(pygame.time.get_ticks() / 1000 ) - start_time
+    test_font = pygame.font.SysFont('Pixe.ttf', 30)
+    current_time = int(pygame.time.get_ticks() / 1000 ) - start_time
+    score_message = test_font.render(f'Your score: {score}',False,(227,207,87))
+    score_rect = score_message.get_rect(center = (100, 50))
+            
     #close the game
 
     if pygame.event.get(pygame.QUIT):  break
@@ -101,7 +111,7 @@ while True:
             move_left = not move_left
         elif e.type == move_down_event:
             for invader in invaders:
-                invader.move_ip(0, 20)
+                invader.move_ip(0, 50)
         elif e.type == reloaded_event:
             # when the reload timer runs out, reset it
             reloaded = True
@@ -143,8 +153,24 @@ while True:
                      lives -= 1
                      heroIImage.y = screenH - 100
 
-                    
+                     if lives == 0:
+
+                      capa_surface = pygame.image.load('game.png').convert_alpha()
+                      capasize = (1336, 800)
+                      capa_image = pygame.transform.scale(capa_surface, capasize)
+                      capa_rect = capa_image.get_rect(center = (400, 200))
+                      screen.blit(capa_image, capa_rect)
+                      ricky2_surface = pygame.image.load('baba.png').convert_alpha()
+                      default_ricky2_size = (100, 100)
+                      ricky2_image = pygame.transform.scale(ricky2_surface, default_ricky2_size)
+                      ricky2_rect = ricky2_image.get_rect(midleft = (600, 400))
+                      screen.blit(ricky2_image, ricky2_rect)
+                      start_time = pygame.time.get_ticks()
+                      current_time = int(pygame.time.get_ticks() / 1000 ) - start_time
                      
+            
+                
+                
     #moves hero         
     pressed = pygame.key.get_pressed()
     if pressed[pygame.K_LEFT]: 
@@ -184,13 +210,7 @@ while True:
         heroIImage.y = screenH - 100
     #score 
     
-    start_time = 0
-    current_time = int(pygame.time.get_ticks() / 1000 ) - start_time
-    test_font = pygame.font.SysFont('Pixe.ttf', 30)
-    current_time = int(pygame.time.get_ticks() / 1000 ) - start_time
-    score_message = test_font.render(f'Your score: {score}',False,(227,207,87))
-    score_rect = score_message.get_rect(center = (100, 50))
-            
+   
    
 
     #Background
