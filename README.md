@@ -124,4 +124,4 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<img src="https://github.com/Dizziolica/Ricky-MortyInvaders/blob/main/morty.gif" width="800" height="600" />
+<img src="https://github.com/Dizziolica/Ricky-MortyInvaders/blob/main/morty.gif" width="1000" height="400" />
